@@ -1,0 +1,404 @@
+@import url("https://fonts.googleapis.com/css?family=Acme");
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+body {
+    background-color:#136fd6;
+}
+.whats-new-button {
+    border:none;
+    display:block;
+    font-family:"Josefin Sans";
+    font-size:30px;
+    color:ivory;
+    padding:20px;
+    border-radius:30px;
+    background-color:#1a8cff;
+    margin-left:auto;
+    margin-right:auto;
+    cursor:pointer;
+
+}
+
+.whats-new-button:hover {
+
+    background-color: rgb(252, 228, 16);
+}
+#back {
+    display:none;
+    position:absolute;
+    top:2px;
+    width:100%;
+    height:160%;
+    background-color:rgba(0,0,0,0.6);
+}
+#whats-new {
+    display:none;
+    position: absolute;
+    border-color:rgb(252, 228, 16);
+    border-style:solid;
+    border-width:4px;
+    top:100px;
+    padding:20px;
+    width:400px;
+    height:auto;
+    border-radius:7px;
+    background-color:#0272e2;
+    text-align:center;
+}
+wn {
+    color:whitesmoke;
+    font-size:30px;
+    font-weight:600;
+    font-family:"Acme";
+}
+#whats-new img{
+    border-radius:5px;
+}
+#whats-new p{
+    color:ivory;
+    font-family:"Prompt";
+}
+#wn-holder {
+    display:flex;
+    justify-content:center;
+}
+.empty {
+    top:50px;
+    height:23px;
+    background-color:#136fd6;
+}
+.nav-bar {
+    overflow:hidden;
+    background-color:#1a8cff;
+    position:relative;
+    
+}
+.command-button-list {
+    display:block;
+    width:50%;
+    margin-left:auto;
+    margin-right:auto;
+}
+.command-button-list li{
+    text-align:center;
+    list-style:none;
+    display:inline-block;
+}
+.clink {
+    font-family:"Prompt";
+    font-weight:200px;
+    color:white;
+    text-decoration:none;
+    padding:20px;
+    background:#1a8cff;
+    border-radius:4px;
+}
+.clink:hover {
+    background:rgb(252, 228, 16);
+ 
+}
+#quizzes {
+    color:rgb(252, 228, 16);
+    font-size:50px;
+    text-align:center;
+    font-family:"Prompt";
+}
+#settings {
+    color:rgb(252, 228, 16);
+    font-size:50px;
+    text-align:center;
+    font-family:"Prompt";
+}
+#purchasing {
+    color:rgb(252, 228, 16);
+    font-size:50px;
+    text-align:center;
+    font-family:"Prompt";
+}
+
+#statistics {
+    color:rgb(252, 228, 16);
+    font-size:50px;
+    text-align:center;
+    font-family:"Prompt";
+}
+#custom {
+    color:rgb(252, 228, 16);
+    font-size:50px;
+    text-align:center;
+    font-family:"Prompt";
+}
+.button-holder {
+    margin-top:50px;
+    text-align:center;
+}
+.button {
+    background-color:#1a8cff;
+    font-size:130%;
+    padding:20px;
+    font-family:"Josefin Sans";
+    color:ivory;
+    text-decoration:none;
+    font-weight:120px;
+    border-radius:25px;
+    margin-right:50px;
+}
+.button:hover {
+    background:rgb(252, 228, 16);
+
+}
+.qtitle {
+    height:100px;
+    display:block;
+    align-items:center;
+}
+.mi {
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80px;
+}
+
+
+.mh {
+    font-family:"Josefin Sans";
+    display:block;
+    color:azure;
+    padding-left:5px;
+    padding-bottom:20px;
+    text-shadow: 2px 2px #015cb8;
+    font-size:300%;
+    text-align:center;
+    animation-name:slideup;
+    animation-duration:5s;
+    animation-iteration-count: infinite;
+    
+}
+.desc-im {
+    align-items:center;
+    margin-left: auto;
+    margin-right: auto;
+    display:block;
+    border-radius:9px;
+    margin-top:20px;
+}
+
+@keyframes slideup {
+    0% {margin-left:-2%;}
+    50% {margin-left:2%;}
+    100% {margin-left:-2%;}
+
+
+}
+.row {
+    display:flex;
+    justify-content: center;
+}
+.feature-desc {
+    display:inline-block;
+    width:400px;
+    margin-top:30px;
+    height:320px;
+    border-radius:12px;
+    background-color:#015cb8;
+    vertical-align:top;
+    border-style:solid;
+
+    border-width:2px;
+    border-color:#0050a0;
+}
+im {
+    line-height:2;
+    padding-top:12px;
+    padding-bottom:102px;
+    color:ivory;
+    font-weight:600;
+    font-size:22px;
+}
+.content-text {
+    color:rgb(221, 221, 221);
+    margin-left:40px;
+    margin-right:40px;
+}
+.collapsible {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    width:60%;
+    background-color:#015cb8;
+    border:none;
+    border-width:3px;
+    border-style:solid;
+    border-color:#015cb8;
+    padding:10px;
+    border-radius:4px;
+    color:ivory;
+    font-size:30px;
+    margin-top:0px;
+    margin-bottom:0px;
+    cursor:pointer;
+
+}
+.collapsible:hover {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+    transition: all 200ms ease-out;
+    background-color:#0156ac;
+    border-color:rgb(255, 218, 6);
+
+}
+.clicked {
+ 
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    width:60%;
+    background-color:#0155aa;
+    border:none;
+    border-width:3px;
+    border-style:solid;
+    border-color:#0155aa;
+    padding:10px;
+    border-radius:4px 4px 0px 0px;
+    color:rgb(223, 223, 223);
+    font-size:30px;
+    margin-top:0px;
+    margin-bottom:0px;
+}
+
+.content {
+    font-family:"Josefin Sans";
+    display:none;
+    width:60%;
+    color:rgb(236, 236, 236);
+    padding-top:10px;
+    margin-top:0px;
+    padding-bottom:5px;
+    margin-bottom:2px;
+    margin-left:auto;
+    margin-right:auto;
+    height:250px;
+    font-size:20px;
+    border-radius:0px 0px 8px 8px;
+    background-color: #0155aa;
+}
+parameter {
+    background-color:#024e9b;
+    padding:5px;
+    border-radius:4px;
+}
+
+.feature-desc-l {
+    display:inline-block;
+    width:400px;
+    margin-top:30px;
+    margin-left:2%;
+    height:320px;
+    vertical-align:middle;
+    border-style:solid;
+    border-radius:12px;
+    background-color:#015cb8;
+    border-width:2px;
+    border-color:#0050a0;
+}
+.desc-p {
+    display:block;
+    text-align:center;
+    font-family:"Josefin Sans";
+    color:ivory;
+    font-size:120%;
+
+    margin-left:20px;
+    margin-right:20px;
+
+}
+.feature-desc:hover {
+    background-color:#0152a3;
+}
+.feature-desc-l:hover {
+    background-color:#0152a3;
+}
+.nav-bar .nav-loc {
+    float:left;
+    margin-bottom:20px;
+    text-align:center;
+    font-family:"Prompt";
+    padding: 23px 20px;
+    text-decoration:none;
+    color:ivory;
+    font-size:30px;
+    font-weight:600;
+    padding: 20px 40px;
+}
+
+.nav-bar .nav-loc-active {
+    text-align:center;
+    margin-bottom:20px;
+    background-color:#59a4ff;
+    float:left;
+    font-family:"Prompt";
+    padding: 23px 20px;
+    text-decoration:none;
+    color:ivory;
+    font-size:30px;
+    font-weight:600;
+    padding: 20px 40px;
+}
+
+.nav-bar .nav-loc:hover {
+    transition: all 200ms ease-out;
+  
+    background-color:#0272e2;
+}
+hr {
+    padding:none;
+    border:none;
+    background-color:#125cb1;
+    height:3px;
+    width:90%;
+}
+
+
+#grad {
+    top:-20px;
+    left:0px;
+    height:20px;
+    display:block;
+    width:100%;
+    border:none;
+    position:relative;
+
+    background-image: linear-gradient(180deg, #125cb1, #136fd6);
+}
+
+.credits {
+    width:700px;
+    margin: auto;    
+    height:160px;
+    background-color:#1266c7;
+    margin-top:130px;
+    display:block;
+    border-radius:40px;;
+}
+.title {
+    font-family:"Josefin Sans";
+    font-size:50px;
+    text-align:center;
+    padding-top:30px;
+    margin-bottom: 20px;
+    color:ivory;
+}
+.credit-p {
+    padding:10px;
+    color:oldlace;
+    text-align:center;
+}
+.link {
+    font-family:"Josefin Sans";
+    color:ivory;
+    font-weight:120%;
+    text-decoration:none;
+}
+.link:hover {
+    color:#e3e3e3;
+}
