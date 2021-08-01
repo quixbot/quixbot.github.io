@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quix Dashboard | Commands</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://cdn.discordapp.com/attachments/760879133562634250/855532796026028062/quizbotpfp.png" type="image/icon type">
+</head>
+<body>
+
+    <div class="nav-bar" >
+        <a class="nav-loc" href="index.html">Home</a>
+        <a class="nav-loc-active" href="commands.html">Commands</a>
+        <a class="nav-loc" href="https://discord.com/api/oauth2/authorize?client_id=833007616593625089&permissions=387136&scope=bot">+ Invite</a>
+    </div>
+    <div id="grad"></div>
+    <div id = "b-container">
+        <ul class="command-button-list">
+            <li><a href="#quizzes" class="clink">Quizzes</a></li>
+            <li><a href="#custom" class="clink">Custom Quizzes</a></li>
+            <li><a href="#purchasing" class="clink">Economy</a></li>
+            <li><a href="#statistics" class="clink">Statistics</a></li>
+            <li><a href="#settings" class="clink">Settings</a></li>
+        </ul>
+    </div>
+    <h3 id="quizzes">Trivia</h3>
+    <button class = "collapsible">?quiz <parameter>category</parameter> <parameter>length</parameter></button>
+    <div class="content">
+        <p class = "content-text" >Start a quiz. The category parameter specifies the quiz's subject (History, Art, etc.) and length parameter is the length of the quiz, between 3 and 15 questions. Quiz is multiple-choice and others can join the quiz.<br><im>Example:</im><br><parameter>?quiz general-knowledge 5</parameter><br><im>Aliases:</im><br>q, qu, qm, quizme</p>
+    </div><br>
+    <button class = "collapsible">?trivia <parameter>length</parameter></button>
+    <div class="content">
+        <p class = "content-text" >Start a trivia quiz that is a certain length that is between 5 and 50 questions (length parameter).  The trivia questions are answered by entering the answer into the channel. Other people can join this quiz.<br><im>Example:</im><br><parameter>?trivia 5</parameter><br><im>Aliases</im><br>t, tr, triv</p>
+    </div><br>
+    <button class = "collapsible">?categories</button>
+    <div class="content">
+        <p class = "content-text" >See a list of categories for <parameter>?quiz</parameter>.<br><im>Example:</im><br><parameter>?categories</parameter><br><im>Aliases:</im><br>c</p>
+    </div><br>
+    <button class = "collapsible">?join</button>
+    <div class="content">
+        <p class = "content-text">Join a quiz (if one is happening). It will send your custom join message.<br><im>Example:</im><br><parameter>?join</parameter><br><im>Aliases:</im><br>j</p>
+    </div><br>
+    <button class = "collapsible">?numfact <parameter>number</parameter></button>
+    <div class="content">
+        <p class = "content-text">Get a fact on a number you provide (number parameter). There are multiple facts, do the same numebr twice and you might get different results.<br><im>Example:</im><br><parameter>?numfact 42</parameter><br><im>Aliases:</im><br>nf</p>
+    </div><br>
+    <h3 id="custom">Custom Quizzes</h3>
+    <button class = "collapsible">?custom</button>
+    <div class="content">
+        <p class = "content-text">Run your custom quiz for you and others to play, if you have created a quiz. The custom quiz is just like the <parameter>?quiz</parameter> quizzes.<br><im>Example:</im><br><parameter>?custom</parameter><br><im>Aliases</im><br>cus</p>
+    </div><br>    
+    <button class = "collapsible">?show</button>
+    <div class="content">
+        <p class = "content-text">Sends your custom quiz (if one has been made) in an embed for you to see.<br><im>Example:</im><br><parameter>?show</parameter><br><im>Aliases</im><br>sh</p>
+    </div><br>  
+    <button class = "collapsible">?add <parameter>question</parameter> <parameter>answer</parameter> <parameter>incorrect options</parameter></button>
+    <div class="content">
+        <p class = "content-text">Add a question to your custom quiz. All parameters must be in "". The parameters are:<br>Question: The question that will be shown (remember the custom quizzes are in multiple choice format)<br>Answer: The correct answer option.<br>Incorrect options: The rest of the other options that are incorrect. There can be no more than 3 incorrect options.<br><im>Example:</im><br><parameter>?add "Is Quix a cool bot?" "yes" "no" "i want a hamburger"</parameter><br><im>Aliases</im><br>None</p>
+    </div><br>  
+    <button class = "collapsible">?delete <parameter>number</parameter></button>
+    <div class="content">
+        <p class = "content-text">Deletes a question based on it's index (e.g. Question 1, Question 5, etc.)<br><im>Example:</im><br><parameter>?delete 2</parameter><br><im>Aliases</im><br>d</p>
+    </div><br>  
+    <button class = "collapsible">?reset</button>
+    <div class="content">
+        <p class = "content-text">Completely wipes your custom quiz. Quiz data is un-recoverable.<br><im>Example:</im><br><parameter>?reset</parameter><br><im>Aliases</im><br>None</p>
+    </div><br>  
+    <h3 id="purchasing">Purchasing</h3>
+    <button class = "collapsible">?shop</button>
+    <div class="content">
+        <p class = "content-text">Shows the Quix shop of upgrades, name used in <parameter>?purchase</parameter>, and cost in tokens (currency).<br><im>Example:</im><br><parameter>?shop</parameter><br><im>Aliases</im><br>sh</p>
+    </div><br>
+    <button class = "collapsible">?purchase <parameter>upgrade name</parameter> <parameter>new</parameter></button>
+    <div class="content">
+        <p class = "content-text">Purchase an upgrade for your profile.  Parameter <parameter>upgrade name</parameter> is what you want to change ("color" (Profile2 color) or "join" (Join message)), and parameter <parameter>new</parameter> is the new value of the upgrade (like "I have joined the Quiz" for upgrade "join")<br><im>Example:</im><br><parameter>?purchase color 255 255 255<br>?purchase join I've joined the quiz.</parameter><br><im>Aliases</im><br>None</p>
+    </div><br>  
+    <h3 id="statistics">Statistics</h3>  
+    <button class = "collapsible">?profile <parameter>@user (Optional)</parameter></button>
+    <div class="content">
+        <p class = "content-text">See the profile of you or another user. If user parameter is ommitted, it shows your profile.  Profile is in an image and does not show profile color (see ?purchase).<br><im>Example:</im><br><parameter>?profile<br>?profile @nyos.exe</parameter><br><im>Aliases</im><br>prof, p</p>
+    </div><br>   
+    <button class = "collapsible">?profile2 <parameter>@user (Optional)</parameter></button>
+    <div class="content">
+        <p class = "content-text">See the profile of you or another user. If user parameter is ommitted, it shows your profile.  Profile is in an embed and does show profile color (see ?purchase).<br><im>Example:</im><br><parameter>?profile2<br>?profile2 @nyos.exe</parameter><br><im>Aliases</im><br>eprofile, p2</p>
+    </div><br>    
+    <button class = "collapsible">?leaderboard</button>
+    <div class="content">
+        <p class = "content-text">See the global leaderboard.  Shows the top 5 in tokens and points.<br><im>Example:</im><br><parameter>?leaderboard</parameter><br><im>Aliases</im><br>lb</p>
+    </div><br>   
+    <button class="collapsible">?badgelist</button>
+    <div class="content">
+        <p class = "content-text">See a list of all possible badges you can get.<br><im>Example:</im><br><parameter>?badgelist</parameter><br><im>Aliases</im><br>bl</p>
+    </div><br>
+    <button class="collapsible">?datareset</button>
+    <div class="content">
+        <p class = "content-text">Delete your profile data.  DATA IS NOT RECOVERABLE.<br><im>Example:</im><br><parameter>?datareset</parameter><br><im>Aliases</im><br>None</p>
+    </div><br>  
+    <h3 id="settings">Settings</h3>
+    <button class="collapsible">?clear <parameter>amount</parameter></button>
+    <div class="content">
+        <p class = "content-text">Delete Quix messages as far back as the amount parameter.  Requires user to have <parameter>MANAGE MESSAGES</parameter> permissions.<br><im>Example:</im><br><parameter>?clear 50</parameter><br><im>Aliases</im><br>sweep, cl</p>
+    </div><br>  
+    <button class="collapsible">?info</button>
+    <div class="content">
+        <p class = "content-text">See info on the Quix bot. Pretty cool :).<br><im>Example:</im><br><parameter>?info</parameter><br><im>Aliases</im><br>i</p>
+    </div><br>  
+    <script>
+        var buttons = document.getElementsByClassName("collapsible");
+        var i;
+
+        for(i=0; i < buttons.length; i++) {
+            buttons[i].addEventListener("click", function beenclicked() {
+
+                var bc = this.nextElementSibling;
+                if (bc.style.display === "block") { 
+                    this.classList.remove("clicked");
+                    this.classList.add("collapsible");
+                    bc.style.display = "none";
+                } else {
+                    this.classList.add("clicked");
+                    this.classList.remove("collapsible");
+                    
+                    bc.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
