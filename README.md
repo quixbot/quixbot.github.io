@@ -1,2 +1,4 @@
 # quixt.github.io
-Website for the Quix DIscord Bot
+Website for the Quix Discord Bot
+
+nothing much.
