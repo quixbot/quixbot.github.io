@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quix Dashboard | Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://cdn.discordapp.com/attachments/760879133562634250/855532796026028062/quizbotpfp.png" type="image/icon type">
+</head>
+<body>
+    <div class="nav-bar">
+        
+        <a class="nav-loc-active" href="/quixt.github.io">Home</a>
+        <a class="nav-loc" href="/commands">Commands</a>
+        <a class="nav-loc" href="https://discord.com/api/oauth2/authorize?client_id=833007616593625089&permissions=387136&scope=bot">+ Invite</a>
+
+    </div>
+    <div id="grad"></div>
+    <img class="mi" src="https://cdn.discordapp.com/attachments/760879133562634250/855532796026028062/quizbotpfp.png">
+    <h1 class="mh">Quix: A powerful quiz bot for Discord</h1>
+    <button class="whats-new-button">What's New?</button>
+
+    <div class="row">
+        <div class="feature-desc">
+            <img class = "desc-im" src="https://media.discordapp.net/attachments/842442019125198889/858502390055436288/unknown.png" alt="Picture of a Quix quiz" width="320" height=auto>
+            <p class="desc-p">Play quizzes and trivia on a variety of topics instantly by yourself or with other members of your discord server.</p>
+        </div>
+        <div class="feature-desc-l">
+            <img class="desc-im" src="https://media.discordapp.net/attachments/842442019125198889/858941164156485672/unknown.png" alt="Picture of custom quiz making" width=320 height=auto>
+            <p class="desc-p">Make custom quizzes with your own questions to play against your friends! (Custom quizzes will not award points, because people could use it to cheat).</p>
+            
+        </div>
+    </div>
+    <br>
+    <div class="row">
+
+        <div class="feature-desc">
+            <img class = "desc-im" src="https://cdn.discordapp.com/attachments/840356807109246997/859100959510102038/unknown.png" alt="Picture of a Quix profile" width="320" height=auto>
+            <p class="desc-p">Gain points and tokens (currency) by playing quizzes, which will also advance you up the global leaderboard!</p>
+        </div>
+        <div class="feature-desc-l">
+            <img class="desc-im" src="https://media.discordapp.net/attachments/840356807109246997/859101841802919956/unknown.png" alt="Picture of custom quiz making" width=320 height=auto>
+            <p class="desc-p">Earn badges by gaining points and doing quizzes that will be shown on your profile!</p>
+            
+            
+        </div>
+    </div>
+    <div id="wn-holder">
+        <div id="back"></div>
+
+        <div id="whats-new">
+
+            <wn>What's New:</wn><br>
+            <img src="https://media.discordapp.net/attachments/833899177464692750/865328383046844446/unknown.png" width=200 height=100>
+            <hr>
+            <p><im>July 15, 2021</im><br><br>Quix "What's New" has been added! Updates on bug fixes, new commands, changes to commands, and more will be shown here!<br><br>Quix has been changed to show a generic error embed on errors, no longer just a plain message!<br><br>Quix quix submitting is coming soon! What does this mean? You can submit your quiz for approval.  If it is approved, others can play your quiz. If it is denied, use the provided feedback to change it and resubmit.</p>
+        </div>
+    </div>
+    <br>
+    <div class="button-holder">
+        <a class="button" href="/commands">Get Started ➜</a> <a class="button" href="https://discord.com/api/oauth2/authorize?client_id=833007616593625089&permissions=387136&scope=bot">Invite Quix ➜</a>
+        
+    </div>
+    <div class="credits">
+        <p class="credit-p"><b class="title">Quiz Resources:</b><br><a class= "link" href="https://opentdb.com">Open Trivia Database</a>  |  <a class= "link" href="https://jservice.io">JService</a>  |  <a class="link" href="http://numbersapi.com/">Numbers API</a></p>
+    </div>
+    <script>
+        var button = document.getElementsByClassName("whats-new-button");
+        var b = document.getElementById("back")
+
+        button[0].addEventListener("click", function beenclicked() {
+            var bc = document.getElementById("whats-new");
+            var b = document.getElementById("back");
+
+            if (bc.style.display === "block") { 
+                bc.style.display = "none";
+                b.style.display = "none";
+
+            } else {
+                bc.style.display="block";
+                b.style.display="block";
+            }
+        });
+        b.addEventListener("click", function backGone() {
+            var bc = document.getElementById("whats-new");
+
+            if (bc.style.display === "block") {
+                bc.style.display = "none";
+                this.style.display="none";
+            } else {
+                bc.style.display = "block";
+                this.style.display="block";
+            }
+        })
+        
+    </script>
+</body>
+</html>
