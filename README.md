@@ -1,4 +1,6 @@
 # quixbot.github.io
-Website for the Quix Discord Bot
+Website for the Quix Discord Bot.
 
-Pretty cool right
+Found at quixbot.github.io
+
+Quix is a multiplayer quiz bot with lots of commands for quizzes and trivia.
