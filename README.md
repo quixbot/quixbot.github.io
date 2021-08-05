@@ -5,5 +5,5 @@ Found at quixbot.github.io
 
 Quix is a multiplayer quiz bot with lots of commands for quizzes and trivia.
 
-#top.gg
+# top.gg
 https://top.gg/bot/833007616593625089
