@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unix Timestamp Creatoe</title>
+</head>
+<body>
+    <div id="current"></div>
+    <script>
+        var currentTime = document.querySelector("#current");
+        function setCurrentTimestamp() {
+            let currentDate = new Date();
+            currentTime.value = currentDate / 1000;
+
+            setTimeout(setCurrentTimestamp,1000);
+        }
+
+        setCurrentTimestamp();
+    </script>
+</body>
+</html>
