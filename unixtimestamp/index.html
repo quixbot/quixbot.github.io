@@ -12,9 +12,9 @@
     <script>
         var currentTime = document.querySelector("#current");
         function setCurrentTimestamp() {
-            let currentDate = new Date();
+            let currentDate = new Date().getTime();
             console.log(currentDate);
-            currentTime.value = currentDate / 1000;
+            currentTime.value = Math.round(currentDate / 1000);
 
             setTimeout(setCurrentTimestamp, 1000);
         }
