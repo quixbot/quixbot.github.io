@@ -2,24 +2,155 @@
 <html lang="en">
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta name="og:title" content="Unix timestamp creator">
+    <meta name="og:description" content = "A simple tool to create unix timestamps for future and past dates">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unix Timestamp Creator</title>
 </head>
+<style>
+    body {
+        margin-top:30px;
+    }
+    #holder {
+        display:flex;
+        justify-content:center;
+    }
+    #current {
+        font-size:50px;
+        margin:0;
+        padding-left:auto;
+        padding-right:auto;
+    }
+    p {
+        font-size:14px;
+    }
+    #discord-format-holder pre {
+        background-color:rgb(233, 233, 233);
+        padding:10px;
+        width:fit-content;
+        border-radius:5px;
+        color:rgb(73, 73, 73);
+        margin-top:auto;
+        margin-left:12px;
+        
+    }
+    #discord-format-holder {
+        display:flex;
+        vertical-align: baseline;
+     
+        justify-content:center;
+        margin-top:20px;
+    }
+    #discord-format-holder p{
+        margin-bottom:auto;
+        margin-top:10px;
+    }
+    .copy {
+        border:none;
+        border-radius:6px;
+        margin-bottom:auto;
+        /*margin-top:auto*/;
+        margin-left:12px;
+        padding:9px;
+    }
+    input{margin-top:10px;margin-bottom:10px;}
+    .form-holder {
+        display:flex;
+        justify-content: center;
+    }
+    form {
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+        margin-top:40px;
+    }
+    .result {
+        text-align:center;
+        font-size:20px;
+    }
+</style>
 <body>
+    <div id="holder">
     <div id="current">Uh oh, something went wrong</div>
+    </div>
+    <div id="discord-format-holder">
+        <p>Discord formatted timestamp:</p>
+        <pre id="discord">
+
+        </pre>
+        <button class = "copy" onclick="copyDiscordFormat()">Copy</button>
+    </div>
+    <div class="form-holder">
+    <form id = "ctf">
+        <label for="year">Year</label>
+        <input name = "year" type="number" min="0" step="1" placeholder="YYYY" required><br>
+        <label for="month">Month</label>
+        <input name = "month" type="number" min="1" max="12" step="1" placeholder="MM" required><br>
+        <label for="day">Day</label>
+        <input name = "day" type="number" min="1" max="31" step="1" placeholder="DD" required><br>
+        <label for="hour">Hour</label>
+        <input name = "hour" type="number" min="0" max="23" step="1" placeholder="Hours" value="0" required><br>
+        <label for="minute">Minute</label>
+        <input name = "minute" type="number" min="0" max="59" step="1" placeholder="Minutes" value="0" required><br>
+        <label for="seconds">Seconds</label>
+        <input name = "seconds" type="number" min="0" max="59" step="1" placeholder="Seconds" value="0" required><br>
+        <button type="submit">Create timestamp</button>
+
+    </form>
+    
+    </div>
+    <p id="date-to-ts" class="result"></p>
+
+    <div class="form-holder">
+    <form id = "ttt">
+        <label for="timestamp">Time Stamp</label>
+        
+        <input name = "timestamp" type="number" step="1" placeholder="XXXXXXXXXXXXXX" required><br>
+        <button type="submit">Get date</button>
+
+    </form>
+    </div>
+    <p id="ts-to-date" class="result"></p>
+
     <script>
-        var currentTime = document.querySelector("#current");
+        const monthList = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+        var ctf = document.querySelector("#ctf");
+        ctf.addEventListener("submit",function (e){
+            e.preventDefault();
+            month = String(monthList[ctf.month.value-1]);
+            let timeString = `${month} ${ctf.day.value}, ${ctf.year.value} ${ctf.hour.value}:${ctf.minute.value}:${ctf.seconds.value}`;
+            d = new Date(timeString).getTime();
+            $("#date-to-ts").text(Math.round(d/1000));
+        });
+
+        var ttt = document.querySelector("#ttt");
+        ttt.addEventListener("submit",function (e){
+            e.preventDefault();
+            var date = new Date(ttt.timestamp.value*1000)
+            var str = `${monthList[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()} at ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+            $("#ts-to-date").text(str);
+        });
+    </script>
+    <script>
+    
         function setCurrentTimestamp() {
             let currentDate = new Date().getTime();
-            console.log(currentDate);
-            currentTime.value = Math.round(currentDate / 1000);
-
+            var now = Math.round(currentDate / 1000)
+            $("#current").html("Seconds since <b>January 1st, 1970:</b> "+String(now)+"");
+            $("#discord").text("<t:"+String(now)+">");
             setTimeout(setCurrentTimestamp, 1000);
         }
 
         setCurrentTimestamp();
+
+        async function copyDiscordFormat() {
+            await navigator.clipboard.writeText($("#discord").text());
+            alert('Text copied!');
+        }
+        
     </script>
 </body>
 </html>
+
