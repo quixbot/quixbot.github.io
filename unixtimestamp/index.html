@@ -10,6 +10,11 @@
     <title>Unix Timestamp Creator</title>
 </head>
 <style>
+
+    h3 {
+        margin-top:30px;
+        text-align:center;
+    }
     body {
         margin-top:30px;
     }
@@ -27,10 +32,11 @@
         font-size:14px;
     }
     #discord-format-holder pre {
-        background-color:rgb(233, 233, 233);
+        
         padding:10px;
         width:fit-content;
         border-radius:5px;
+        background-color:rgb(233, 233, 233);
         color:rgb(73, 73, 73);
         margin-top:auto;
         margin-left:12px;
@@ -64,12 +70,22 @@
         display:block;
         margin-left:auto;
         margin-right:auto;
-        margin-top:40px;
     }
     .result {
         text-align:center;
         font-size:20px;
     }
+     discord-time {
+        background-color:rgb(233, 233, 233);
+        color:rgb(73, 73, 73);
+        margin-right:12px;
+        padding:5px;
+        border-radius:3px;
+     }
+     b-t {
+         font-size:30px;
+         font-weight:500;
+     }
 </style>
 <body>
     <div id="holder">
@@ -82,6 +98,7 @@
         </pre>
         <button class = "copy" onclick="copyDiscordFormat()">Copy</button>
     </div>
+    <h3>Create Unix Timestamp</h3>
     <div class="form-holder">
     <form id = "ctf">
         <label for="year">Year</label>
@@ -102,7 +119,7 @@
     
     </div>
     <p id="date-to-ts" class="result"></p>
-
+    <h3>Change Timestamp to Date</h3>
     <div class="form-holder">
     <form id = "ttt">
         <label for="timestamp">Time Stamp</label>
@@ -122,7 +139,9 @@
             month = String(monthList[ctf.month.value-1]);
             let timeString = `${month} ${ctf.day.value}, ${ctf.year.value} ${ctf.hour.value}:${ctf.minute.value}:${ctf.seconds.value}`;
             d = new Date(timeString).getTime();
-            $("#date-to-ts").text(Math.round(d/1000));
+
+            var s = Math.round(d/1000);
+            $("#date-to-ts").html("<b-t>"+String(s)+"</b-t><br><br>Discord: <discord-time>&lt;t:"+s+"&gt;</discord-time>");
         });
 
         var ttt = document.querySelector("#ttt");
@@ -130,7 +149,7 @@
             e.preventDefault();
             var date = new Date(ttt.timestamp.value*1000)
             var str = `${monthList[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()} at ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
-            $("#ts-to-date").text(str);
+            $("#ts-to-date").html("<b-t>"+str+"</b-t>");
         });
     </script>
     <script>
