@@ -12,7 +12,7 @@
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
 
     <script>
-        alert("winning")
+        alert("cool")
         var request = new Request(`https://api.unsplash.com/photos/?client_id=${env.KEY}`,{method:"GET"});
         fetch(request).then(response => {
             alert(response.blob())
