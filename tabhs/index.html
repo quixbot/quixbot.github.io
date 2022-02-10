@@ -12,7 +12,8 @@
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
 
     <script>
-        var request = new Request(`https://api.unsplash.com/photos/?client_id=${process.env.ACCESS_KEY}`,{method:"GET"});
+        alert("winning")
+        var request = new Request(`https://api.unsplash.com/photos/?client_id=${process.env.KEY}`,{method:"GET"});
         fetch(request).then(response => {
             alert(response.blob())
         })
