@@ -13,7 +13,7 @@
 
     <script>
         alert("cool")
-        var request = new Request(`https://api.unsplash.com/photos/?client_id=${env.KEY}`,{method:"GET"});
+        var request = new Request(`https://api.unsplash.com/photos/random`,{method:"GET"});
         fetch(request).then(response => {
             alert(response.blob())
         })
