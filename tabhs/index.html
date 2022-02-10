@@ -13,7 +13,7 @@
 
     <script>
         alert("winning")
-        var request = new Request(`https://api.unsplash.com/photos/?client_id=${process.env.KEY}`,{method:"GET"});
+        var request = new Request(`https://api.unsplash.com/photos/?client_id=${env.KEY}`,{method:"GET"});
         fetch(request).then(response => {
             alert(response.blob())
         })
