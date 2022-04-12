@@ -9,6 +9,11 @@
     
 
     <style>
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+           100% { transform: rotate(360deg); }
+        }
+        
         #background-rect {
             height: 100%; width: 100%;
         
@@ -17,6 +22,8 @@
         #gear {
             transform-box: fill-box;
             transform-origin: center;
+            animation-name: spin;
+            animation-duration: 4s;
         }
 
         body{
