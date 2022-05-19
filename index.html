@@ -1,7 +1,52 @@
 <!DOCTYPE html>
-<html>
-  <body>
-    <h1>oh btw i use arch</h1>
-    <iframe style="width:100%; height:800px;" src="https://archlinux.org/">
-  <body>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quixt.github.io</title>
+    <link rel="stylesheet" href="./index.css">
+
+</head>
+
+<body>
+    <header>
+        <section class="center">
+            <h1 id="slowType"></h1>
+        </section>
+        <div class="terminal">
+            <span class="terminal-pre">quixt</span> <span class="terminal-sym">:</span><span class="t-blue"> ~</span><span class="terminal-sym">$</span> <span id="terminal-con"></span>
+        </div>
+    </header>
+
+    <script>
+        var text = "Quixt, Developer"
+        var terminalText = "echo \"I enjoy creating websites and web applications, Discord bots, and much more. I enjoy learning when I can. Scroll down to see some of my stuff!\""
+        var slowTyper = document.querySelector("#slowType");
+        const flash = document.getElementById("flasher");
+        const content = document.getElementById("terminal-con");
+        var isFlash = false;
+
+        function typeContent(index) {
+            if (index === terminalText.length) {
+                return
+            }
+            content.innerHTML = content.innerHTML + terminalText.charAt(index);
+            setTimeout(typeContent, Math.random() * 5 + 45, index + 1);
+        }
+
+        function addLetter(index) {
+            if (index === text.length) {
+                typeContent(0);
+
+                return
+            }
+            slowTyper.innerHTML = slowTyper.innerHTML + text.charAt(index);
+            setTimeout(addLetter, 125, index + 1);
+        }
+        addLetter(0);
+    </script>
+</body>
+
 </html>

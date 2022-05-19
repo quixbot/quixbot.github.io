@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Mono&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+header {
+    height: 50vh;
+    width: 100vw;
+    background-color: black;
+    border: 3px solid silver;
+}
+
+header h1 {
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 8vh;
+    margin-top: 21vh;
+}
+
+.center {
+    display: flex;
+    align-items: baseline;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+#flasher {
+    background-color: rgb(193, 193, 193);
+    width: 2px;
+    height: 60px;
+    display: inline-block;
+    visibility: visible;
+    margin-left: 1vw;
+}
+
+.terminal-pre {
+    color: lime;
+    font-family: "Roboto Mono", monospace;
+}
+
+.terminal-sym {
+    font-family: "Roboto Mono", monospace;
+    color: white;
+}
+
+#terminal-con {
+    color: white;
+    font-family: "Roboto Mono", monospace;
+}
+
+.terminal {
+    display: block;
+    font-family: "Roboto Mono", monospace;
+}
+
+.t-blue {
+    color: cornflowerblue;
+}
