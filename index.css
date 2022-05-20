@@ -128,7 +128,7 @@ header h1 {
 }
 
 .item:hover>.content {
-    height: 12vh;
+    height: 20vh;
 }
 
 .info {
