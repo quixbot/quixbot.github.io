@@ -1,8 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Mono&display=swap');
+:root {
+    --bg-color-one: rgb(50, 50, 50);
+    --bg-color-two: rgb(30, 30, 30);
+    --theme: rgb(0, 119, 238);
+    --theme-darker: rgb(0, 105, 209);
+    --font-color-one: rgb(255, 255, 255);
+    --font-color-two: rgb(227, 227, 227);
+}
+
 body {
     margin: 0;
     padding: 0;
     text-align: center;
+    background-color: var(--bg-color-one);
 }
 
 * {
@@ -13,7 +23,9 @@ header {
     height: 50vh;
     width: 100vw;
     background-color: black;
-    border: 3px solid silver;
+    border: 3px solid black;
+    border-bottom: 3px solid var(--theme);
+    padding: 0 10vw;
 }
 
 header h1 {
@@ -61,4 +73,65 @@ header h1 {
 
 .t-blue {
     color: cornflowerblue;
+}
+
+.item {
+    width: 60%;
+    background-color: var(--bg-color-two);
+    display: block;
+    margin: 2vh auto;
+    cursor: pointer;
+    margin-top: 6vh;
+}
+
+.item .title {
+    height: 8vh;
+    background-color: var(--theme);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.item:hover>.title {
+    background-color: var(--theme-darker);
+}
+
+.item h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 4vh;
+    color: var(--font-color-one);
+    margin-left: 2vw;
+}
+
+.item .langs {
+    font-family: "Roboto Mono", monospace;
+    position: relative;
+    margin-left: 5vw;
+    margin-right: 2vw;
+    color: var(--font-color-two);
+}
+
+.content {
+    overflow: hidden;
+    height: 0;
+    transition: height 0.2s ease-out;
+}
+
+.item p {
+    font-family: "Roboto Mono", monospace;
+    background-color: var(--bg-color-two);
+    color: var(--font-color-two);
+    display: block;
+    /* padding: 1vh; */
+    padding: 1vh;
+    transition: height 0.2s ease-out;
+}
+
+.item:hover>.content {
+    height: 12vh;
+}
+
+.info {
+    color: #b2b2b2;
+    font-family: "Roboto Mono", monospace;
 }
