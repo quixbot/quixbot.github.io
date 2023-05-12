@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>real</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+</head>
+<style>
+    @font-face {
+        font-family: "weezer";
+        src: url("./weezerfont.ttf");
+    }
+    
+    h1 {
+        font-size: 100px;
+        text-align: center;
+        display: block;
+        margin: auto;
+        margin-top: 30vh;
+        font-family: "weezer";
+    }
+    
+    .fly {
+        position: absolute;
+        display: block;
+        left: -50px;
+        font-size: 50px;
+        font-family: "weezer";
+        color: rgba(0, 0, 0, 0.5);
+        user-select: none;
+    }
+    
+    .flyInLeft {
+        animation: flyfromleft 5s linear;
+    }
+    
+    .flyInRight {
+        animation: flyfromright 5s linear;
+    }
+    
+    @keyframes flyfromleft {
+        0% {
+            transform: translate(-500px);
+        }
+        100% {
+            transform: translate(100vw);
+        }
+    }
+    
+    @keyframes flyfromright {
+        0% {
+            transform: translate(100vw);
+        }
+        100% {
+            transform: translate(-500px);
+        }
+    }
+</style>
+
+<body>
+    <h1 id="ip">0.0.0.0</h1>
+    <script>
+        var ip = "";
+        $.getJSON("https://api.ipify.org?format=json", function(data) {
+
+            $("#ip").html(data.ip);
+            ip = data.ip;
+            addIp();
+        })
+
+        function addIp() {
+            var n = document.createElement("h3");
+
+            var choose = Math.round(Math.random());
+            if (choose == 0) {
+                n.className = "fly flyInLeft";
+
+            } else {
+                n.className = "fly flyInRight";
+            }
+            n.style.top = Math.round(Math.random() * 80 + 10) + "vh";
+            n.innerText = ip;
+            document.body.append(n);
+            setTimeout(deleteEl, 5000, n);
+            setTimeout(addIp, 500);
+        }
+
+        function deleteEl(n) {
+            n.remove();
+        }
+    </script>
+</body>
+
+</html>
